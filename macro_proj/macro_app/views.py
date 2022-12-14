@@ -36,7 +36,7 @@ def sign_up(request):
 @csrf_exempt
 def login(request):
     if request.method == 'GET':
-        return render(request, 'home.html')
+        return render(request, 'index.html')
     elif request.method == 'POST':
         body = json.loads(request.body)
         user = macros.objects.get(email=body['email'])
