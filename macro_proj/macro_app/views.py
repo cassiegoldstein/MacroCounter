@@ -6,6 +6,8 @@ import hashlib
 import random
 from .models import macros
 from django.http import JsonResponse
+from django.contrib.auth import logout
+
 
 # Create your views here.
 def index(request):
@@ -53,6 +55,10 @@ def login(request):
         return response
   #if username/password are not in database, error will occur
 
+@csrf_exempt
+def log_out(request):
+    logout(request)
+    return render(request, 'index.html')
 
 def home(request):
     return render(request, 'home.html')
