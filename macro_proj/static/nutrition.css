@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.navbarColor {
+    background-color: #537f46;
+    color: white;
+}
+
+.addBG {
+    background-image: url(images/header.png);
+}
+
+.header {
+    margin: 10px;
+    color: white;
+}
+
+.squareBtn {
+    background-color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.top {
+    background-image: url(bg.jpg);
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #537f46;
+    border: none;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:  17px;
+
+}
+
+input::placeholder{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:  17px;
+
+}
+
+.submit{
+  background-color: white;
+    border: solid #537f46;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.secondSection{
+font-family: 'Lora', serif;
+    font-size: 25px;
+}
+
+.mc{
+    font-family: 'Lora', serif;
+    font-size: 20px;
+}
+
+.navText{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:  15px
+}
+
+.ingrName{
+    text-transform: capitalize;
+    margin-left: 130px;
+    font-family: 'Lora', serif;
+    font-size: 35px;
+}
+
+.center-row{
+    margin-left: 65px;
+}
+

@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
                 password: passwordValue,
                 }).then((response)=>{	
                     console.log(response)	
-                    window.location.replace("/success/");	
+                    window.location.replace("/home/");	
                 })	
         };	
         

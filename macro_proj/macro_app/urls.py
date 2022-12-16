@@ -6,5 +6,6 @@ urlpatterns = [
     path('log-in/', views.login),
     path('sign-up/', views.sign_up, name="signup"),
     path('log-out/', views.log_out, name="logout"),
-    path('success/', views.home, name="success"),
+    path('home/', views.home, name="home"),
+    path('food-adder/', views.foodAdder, name="foodAdder"),
 ]

@@ -7,6 +7,8 @@ import random
 from .models import macros
 from django.http import JsonResponse
 from django.contrib.auth import logout
+from datetime import date
+
 
 
 # Create your views here.
@@ -60,5 +62,19 @@ def log_out(request):
     logout(request)
     return render(request, 'index.html')
 
+#We will only be getting the data for me for demo purposes. 
+#This is just to simulate what the app would look like with full functionality
 def home(request):
-    return render(request, 'home.html')
+    cassie_data = macros.objects.get(pk=1)
+    data = {
+        'cassie_data': cassie_data,
+    }
+    return render(request, 'home.html', data)
+
+todaysDate = date.today()
+def foodAdder(request):
+    date = todaysDate
+    data = {
+        'date': date
+    }
+    return render(request, 'foodAdder.html', data)
