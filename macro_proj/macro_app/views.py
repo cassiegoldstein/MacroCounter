@@ -8,6 +8,8 @@ from .models import macros
 from django.http import JsonResponse
 from django.contrib.auth import logout
 from datetime import date
+from .models import Food
+import json
 
 
 
@@ -66,6 +68,7 @@ def log_out(request):
 #This is just to simulate what the app would look like with full functionality
 def home(request):
     cassie_data = macros.objects.get(pk=2)
+    food_data = Food.objects.get(pk=1)
     data = {
         'weight': cassie_data.weight,
         'activity_level': cassie_data.lifestyle.lower(),
@@ -74,7 +77,10 @@ def home(request):
         'carbs_active': 1.5 * cassie_data.weight,
         'carbs_sedentary': 0.5 * cassie_data.weight,
         'fat_active': 0.5 * cassie_data.weight,
-        'fat_sedentary': 0.4 * cassie_data.weight
+        'fat_sedentary': 0.4 * cassie_data.weight,
+        'carbs': food_data.carbs,
+        'protein': food_data.protein,
+        'fat': food_data.fat,
     }
     return render(request, 'home.html', data)
 
@@ -85,3 +91,14 @@ def foodAdder(request):
         'date': date
     }
     return render(request, 'foodAdder.html', data)
+
+@csrf_exempt
+def addFood(request):
+    if request.method == 'POST':
+        print('received')
+
+        body = json.loads(request.body)
+        new_food = Food(protein = body['protein'], carbs = body['carbs'], fat = body['fat'])
+        new_food.save()
+
+    return JsonResponse('success', safe=False)

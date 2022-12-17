@@ -84,3 +84,20 @@ font-family: 'Lora', serif;
     margin-left: 65px;
 }
 
+.main{
+    margin: 30px;
+}
+
+.main h2{
+    font-family: 'Lora', serif;
+}
+
+.green{
+    background-color: #9cbf5d;
+    opacity: 0.8;
+}
+
+.goalLabel{
+    padding-left: 320px;
+}
+

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/nutrition.css?{% now "U" %}"/>
-    <script src='../static/nutrition.js'> </script>
+    <script type="module" src='../static/nutrition.js'> </script>
     <script src="https://kit.fontawesome.com/8ae2d180d5.js" crossorigin="anonymous"></script>
     <title>Log-in</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,17 +26,57 @@
     </nav>
     
     {% if activity_level == "active" %}
-        <p>Daily Protein Goal: {{protein_active}}g</p>
-        <p>Daily Carb Goal: {{carbs_active}}g</p>
-        <p>Daily Fat Goal: {{fat_active}}g</p>
+    <div class="main">
+        <h2>Daily Macro Goals</h2>
+            <br>
+            <div class="progress green">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            {{protein}}g
+        </div>
+      </div>
+            <h6 class="goalLabel">{{protein_active}}g Protein</h6>
+            <br>
+            <div class="progress green">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            {{carbs}}g
+        </div>
+      </div>
+            <h6 class="goalLabel">{{carbs_active}}g Carbs</h6>
+            <br>
+           <div class="progress green">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            {{fat}}g
+        </div>
+      </div>
+            <h6 class="goalLabel">{{fat_active}}g Fat</h6>
+        </div>
     {%else%}
     
-    <p>Daily Protein Goal: {{protein_sedentary}}g</p>
-    <p>Daily Carb Goal: {{carbs_active}}g</p>
-    <p>Daily Fat Goal: {{fat_active}}g</p>
+    <div class="main">
+        <h2>Daily Macro Goals</h2>
+            <br>
+            <div class="progress green">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            {{protein}}g
+        </div>
+      </div>
+            <h6 class="goalLabel">{{protein_sedentary}}g Protein</h6>
+            <br>
+            <div class="progress green">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            {{carbs}}g
+        </div>
+      </div>
+            <h6 class="goalLabel">{{carbs_sedentary}}g Carbs</h6>
+            <br>
+           <div class="progress green">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            {{fat}}g
+        </div>
+      </div>
+            <h6 class="goalLabel">{{fat_sedentary}}g Fat</h6>
+        </div>
     {% endif %}
-    {{cassie_data.weight}}
-    {{cassie_data.lifestyle}}
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

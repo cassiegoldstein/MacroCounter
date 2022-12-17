@@ -1,3 +1,7 @@
+// export let addFat;
+// export let addProtein;
+// export let addCarbs;
+
 window.addEventListener('load', () => {
     const submit = document.querySelector('#getfood');
     const ingredient = document.querySelector("#ingr");
@@ -7,7 +11,7 @@ window.addEventListener('load', () => {
         window.location.replace("/home/");
     });
 
-
+  
     submit.addEventListener('click', (e) => {
         e.preventDefault();
         //get value of ingredient
@@ -226,7 +230,10 @@ window.addEventListener('load', () => {
                     })
 
                     add.addEventListener('click', () => {
-                        //add functionality to move to next page and add data
+                        axios.post('/add-food/', {'carbs': carbsG, 'protein': proteinG, 'fat': fatG}).then((response)=>{
+                            console.log(response);
+                        });
+                        window.location.reload();
                     })
 
                 }).catch(error => {
