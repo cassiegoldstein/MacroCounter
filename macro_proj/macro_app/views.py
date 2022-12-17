@@ -65,9 +65,16 @@ def log_out(request):
 #We will only be getting the data for me for demo purposes. 
 #This is just to simulate what the app would look like with full functionality
 def home(request):
-    cassie_data = macros.objects.get(pk=1)
+    cassie_data = macros.objects.get(pk=2)
     data = {
-        'cassie_data': cassie_data,
+        'weight': cassie_data.weight,
+        'activity_level': cassie_data.lifestyle.lower(),
+        'protein_active': 0.8 * cassie_data.weight,
+        'protein_sedentary': 0.36 * cassie_data.weight,
+        'carbs_active': 1.5 * cassie_data.weight,
+        'carbs_sedentary': 0.5 * cassie_data.weight,
+        'fat_active': 0.5 * cassie_data.weight,
+        'fat_sedentary': 0.4 * cassie_data.weight
     }
     return render(request, 'home.html', data)
 
