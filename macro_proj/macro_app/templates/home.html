@@ -30,21 +30,21 @@
         <h2>Daily Macro Goals</h2>
             <br>
             <div class="progress green">
-        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="{% widthratio protein protein_active 100 %}" aria-valuemin="0" aria-valuemax="100" style="width: {% widthratio protein protein_active 100 %}%">
             {{protein}}g
         </div>
       </div>
             <h6 class="goalLabel">{{protein_active}}g Protein</h6>
             <br>
             <div class="progress green">
-        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="{% widthratio carbs carbs_active 100 %}" aria-valuemin="0" aria-valuemax="100" style="width:{% widthratio carbs carbs_active 100 %}%">
             {{carbs}}g
         </div>
       </div>
             <h6 class="goalLabel">{{carbs_active}}g Carbs</h6>
             <br>
            <div class="progress green">
-        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="{% widthratio fat fat_active 100 %}" aria-valuemin="0" aria-valuemax="100" style="width:{% widthratio fat fat_active 100 %}%">
             {{fat}}g
         </div>
       </div>
@@ -56,7 +56,7 @@
         <h2>Daily Macro Goals</h2>
             <br>
             <div class="progress green">
-        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" aria-valuenow="{% widthratio protein protein_sedentary 100 %}" aria-valuemin="0" aria-valuemax="100" style="width:{% widthratio protein protein_sedentary 100 %}%">
             {{protein}}g
         </div>
       </div>
