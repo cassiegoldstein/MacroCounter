@@ -10,6 +10,10 @@ window.addEventListener('load', () => {
             window.location.replace("/log-out/");
         })
     
-        //add to progress bar
+        //add food method 2
+    const rndBtn = document.querySelector(".rndBtn");
+    rndBtn.addEventListener('click', () => {
+        window.location.replace("/food-adder/");
+    })
         
 })

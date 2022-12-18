@@ -10,6 +10,7 @@ from django.contrib.auth import logout
 from datetime import date
 from .models import Food
 import json
+from django.db.models import Sum
 
 
 
@@ -67,8 +68,10 @@ def log_out(request):
 #We will only be getting the data for me for demo purposes. 
 #This is just to simulate what the app would look like with full functionality
 def home(request):
-    cassie_data = macros.objects.get(pk=2)
-    food_data = Food.objects.get(pk=1)
+    cassie_data = macros.objects.get(pk=1)
+    carbData = list(Food.objects.aggregate(Sum('carbs')).values())[0]
+    proteinData = list(Food.objects.aggregate(Sum('protein')).values())[0]
+    fatData = list(Food.objects.aggregate(Sum('fat')).values())[0]
     data = {
         'weight': cassie_data.weight,
         'activity_level': cassie_data.lifestyle.lower(),
@@ -78,9 +81,9 @@ def home(request):
         'carbs_sedentary': 0.5 * cassie_data.weight,
         'fat_active': 0.5 * cassie_data.weight,
         'fat_sedentary': 0.4 * cassie_data.weight,
-        'carbs': food_data.carbs,
-        'protein': food_data.protein,
-        'fat': food_data.fat,
+        'carbs': carbData,
+        'protein': proteinData,
+        'fat': fatData
     }
     return render(request, 'home.html', data)
 
